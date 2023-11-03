@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Function to "decrypt" the encrypted word - for now, it's just reversing it back
     function decryptWord(encryptedWord) {
         return encryptedWord.split('').reverse().join('');
-    } // This closing brace was missing
+    }
 
     // Function to handle the decryption attempt
     function handleDecryptionAttempt(encryptedSpan) {
@@ -38,10 +38,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Mock function to generate a poem with one "encrypted" word
     function generatePoem(input) {
         const words = input.split(/\s+/);
-        const poemWords = words.map(word => word.split('').reverse().join('')); // Reverse each word to simulate "poem" generation
+        const poemWords = words.map(word => word); // Keep the words as is for "poem" generation
         const randomIndex = Math.floor(Math.random() * poemWords.length); // Choose a random word to "encrypt"
-        poemWords[randomIndex] = encryptWord(poemWords[randomIndex]); // "Encrypt" one random word
-        return poemWords.join(' '); // Join the words back into a string
+        const encryptedWord = encryptWord(words[randomIndex]); // Encrypt the original word
+        poemWords[randomIndex] = encryptedWord; // Replace one word with its "encrypted" version
+        return { poemWords, encryptedWord }; // Return both the poem and the encrypted word
     }
 
     // Event listener for the generate button
@@ -55,12 +56,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
 
         // Generate the poem and display it
-        const poem = generatePoem(userInput);
+        const { poemWords, encryptedWord } = generatePoem(userInput); // Destructure to get both the poem and the encrypted word
         poemContainer.textContent = ''; // Clear the container
-        poem.split(/\s+/).forEach((word, index) => {
+        poemWords.forEach((word, index) => {
             const span = document.createElement('span');
             span.textContent = word + ' ';
-            if (word === encryptWord(word)) { // If the word is the "encrypted" one, add a class
+            if (word === encryptedWord) { // Only add the 'encrypted' class to the encrypted word
                 span.classList.add('encrypted');
             }
             poemContainer.appendChild(span);
