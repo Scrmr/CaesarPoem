@@ -45,32 +45,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
         return { poemWords, encryptedWord }; // Return both the poem and the encrypted word
     }
 
-    // Event listener for the generate button
-    generateBtn.addEventListener('click', () => {
-        const userInput = wordInput.value.trim();
+   // Event listener for the generate button
+generateBtn.addEventListener('click', async () => {
+    const userInput = wordInput.value.trim();
+    if (!validateInput(userInput)) {
+        alert('Please enter up to 10 words.');
+        return;
+    }
 
-        // Validate the input
-        if (!validateInput(userInput)) {
-            alert('Please enter up to 10 words.');
-            return;
+    try {
+        const response = await fetch('/generate-poem', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ input: userInput }),
+        });
+        const data = await response.json();
+        if (data.poem) {
+            displayPoem(data.poem); // Implement this function to display the poem
+        } else {
+            alert('Failed to generate poem.');
         }
-
-        // Generate the poem and display it
-        const { poemWords, encryptedWord } = generatePoem(userInput); // Destructure to get both the poem and the encrypted word
-        poemContainer.textContent = ''; // Clear the container
-        poemWords.forEach((word, index) => {
-            const span = document.createElement('span');
-            span.textContent = word + ' ';
-            if (word === encryptedWord) { // Only add the 'encrypted' class to the encrypted word
-                span.classList.add('encrypted');
-            }
-            poemContainer.appendChild(span);
-        });
-
-        // Add click event listeners to the encrypted words to allow decryption attempts
-        const encryptedSpans = document.querySelectorAll('.encrypted');
-        encryptedSpans.forEach(span => {
-            span.addEventListener('click', () => handleDecryptionAttempt(span));
-        });
-    });
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred while generating the poem.');
+    }
 });
+
+    });
