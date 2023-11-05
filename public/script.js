@@ -34,16 +34,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             alert('Not quite, try again.');
         }
     }
-    
-    // Mock function to generate a poem with one "encrypted" word
-    function generatePoem(input) {
-        const words = input.split(/\s+/);
-        const poemWords = words.map(word => word); // Keep the words as is for "poem" generation
-        const randomIndex = Math.floor(Math.random() * poemWords.length); // Choose a random word to "encrypt"
-        const encryptedWord = encryptWord(words[randomIndex]); // Encrypt the original word
-        poemWords[randomIndex] = encryptedWord; // Replace one word with its "encrypted" version
-        return { poemWords, encryptedWord }; // Return both the poem and the encrypted word
-    }
 
    // Event listener for the generate button
 generateBtn.addEventListener('click', async () => {
@@ -72,5 +62,32 @@ generateBtn.addEventListener('click', async () => {
         alert('An error occurred while generating the poem.');
     }
 });
+
+function displayPoem(poem) {
+    poemContainer.innerHTML = ''; // Clear the previous poem
+    const lines = poem.split('\n'); // Assuming the poem is separated by new lines
+    lines.forEach(line => {
+        const p = document.createElement('p');
+        p.textContent = line;
+        poemContainer.appendChild(p);
+    });
+}
+
+
+function caesarCipher(str, shift) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    return str
+      .toLowerCase()
+      .split('')
+      .map(char => {
+        if (alphabet.includes(char)) {
+          let newIndex = (alphabet.indexOf(char) + shift) % 26;
+          return alphabet[newIndex];
+        }
+        return char;
+      })
+      .join('');
+  }
+  
 
     });
