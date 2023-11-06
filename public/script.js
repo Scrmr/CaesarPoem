@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
 
       try {
-          const response = await fetch('/generate-poem', {
+        const response = await fetch('https://cypherpoem.ew.r.appspot.com/generate-poem', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',
