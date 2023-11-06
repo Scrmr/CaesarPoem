@@ -44,8 +44,8 @@ async function generatePoemWithAI(input) {
     });
     return response.data.choices[0].text;
   } catch (error) {
-    console.error('Error calling OpenAI API:', error);
-    return null;
+    console.error('Error calling OpenAI API:', error.response ? error.response.data : error.message);
+    return null;  
   }
 }
 
@@ -69,3 +69,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+
