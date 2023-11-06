@@ -50,7 +50,7 @@ async function generatePoemWithAI(input) {
 }
 
 const app = express();
-app.use(express.static('public'));
+app.use(express.static(''));
 app.use(express.json());
 app.use(cors());
 
