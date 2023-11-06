@@ -1,0 +1,19 @@
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # ... other steps ...
+
+      - name: Build and Deploy
+        run: |
+          # Your build and deploy script goes here
+          npm install
+          npm run build
+          npm run deploy
+        env:
+          # This maps the GitHub secret to the environment variable expected by your Node.js app
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PORT: ${{ secrets.PORT || 3000 }} # if you have a PORT variable, otherwise this line is not necessary
