@@ -1,12 +1,10 @@
-runtime: nodejs14 # or whatever version you are using
+runtime: nodejs14 # Ensure this matches the Node.js version you're using
 env: standard
-instance_class: F1 # You can choose different classes for more power
+instance_class: F1
 
 automatic_scaling:
   min_idle_instances: 0
-  max_idle_instances: automatic  # default is "automatic"
-  min_total_instances: 1
-  max_total_instances: automatic  # default is "automatic"
+  max_idle_instances: automatic  # App Engine adjusts automatically
 
 handlers:
 - url: /.*
