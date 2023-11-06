@@ -1,0 +1,13 @@
+runtime: nodejs14 # or whatever version you are using
+env: standard
+instance_class: F1 # You can choose different classes for more power
+
+automatic_scaling:
+  min_idle_instances: 0
+  max_idle_instances: automatic  # default is "automatic"
+  min_total_instances: 1
+  max_total_instances: automatic  # default is "automatic"
+
+handlers:
+- url: /.*
+  script: auto
