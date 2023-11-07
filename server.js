@@ -8,6 +8,12 @@ const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
 const client = new SecretManagerServiceClient();
 const app = express();
 
+// CORS configuration
+const corsOptions = {
+  origin: 'https://ignasz.uk', // Replace with '*' to allow any domain or a specific domain to allow
+  optionsSuccessStatus: 200
+};
+
 let openaiApiKey; // Variable to store the OpenAI API key
 
 app.use(express.static(''));
