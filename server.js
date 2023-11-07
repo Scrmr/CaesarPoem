@@ -3,6 +3,16 @@ require('dotenv').config();
 const axios = require('axios');
 const express = require('express');
 const cors = require('cors');
+const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
+
+const client = new SecretManagerServiceClient();
+const app = express();
+
+let openaiApiKey; // Variable to store the OpenAI API key
+
+app.use(express.static(''));
+app.use(express.json());
+app.use(cors());
 
 // Caesar cipher function
 function caesarCipher(str, shift) {
@@ -29,7 +39,7 @@ function applyCaesarCipherToPoem(poem, shift) {
   return { cipheredPoem: words.join(' '), encryptedWordIndices };
 }
 
-
+// Function to generate a poem with the AI
 async function generatePoemWithAI(input) {
   try {
     const response = await axios.post('https://api.openai.com/v1/engines/text-davinci-003/completions', {
@@ -38,22 +48,18 @@ async function generatePoemWithAI(input) {
       temperature: 0.7,
     }, {
       headers: {
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+        'Authorization': `Bearer ${openaiApiKey}`, // Use the API key from the Secret Manager
         'Content-Type': 'application/json',
       }
     });
     return response.data.choices[0].text;
   } catch (error) {
     console.error('Error calling OpenAI API:', error.response ? error.response.data : error.message);
-    return null;  
+    return null;
   }
 }
 
-const app = express();
-app.use(express.static(''));
-app.use(express.json());
-app.use(cors());
-
+// Endpoint to generate a poem
 app.post('/generate-poem', async (req, res) => {
   const userInput = req.body.input;
   const rawPoem = await generatePoemWithAI(userInput);
@@ -65,9 +71,26 @@ app.post('/generate-poem', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// Function to get the secret from the Secret Manager
+async function getSecret(name) {
+  const [version] = await client.accessSecretVersion({
+    name: `projects/cypherpoem/secrets/${name}/versions/latest`,
+  });
+  return version.payload.data.toString('utf8');
+}
+
+// Function to start the server
+async function startServer() {
+  openaiApiKey = await getSecret('openai-api-key'); // Fetch the API key from the Secret Manager
+
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+// Start the server and handle any errors
+startServer().catch(err => {
+  console.error('Error starting the server:', err);
+  process.exit(1);
 });
-
-
