@@ -10,10 +10,11 @@
     <div class="game-container">
         <header>
             <h1>Cypher Poem Game</h1>
-            <p>Enter up to 10 words to generate a poem:</p>
+            <p>Enter a theme or subject to generate a poem (max 10 words):</p>
         </header>
         <main>
-            <textarea id="word-input" placeholder="Enter words here (max 10 words)" maxlength="200"></textarea>
+            <div class="input-prefix">Generate a poem about:</div>
+            <textarea id="word-input" placeholder="Enter a theme or subject (e.g., love, adventure, spring)" maxlength="200"></textarea>
             <button id="generate-btn">Generate Poem</button>
             <div id="poem-container" class="poem-container">
                 <!-- The poem will be displayed here -->

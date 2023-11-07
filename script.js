@@ -40,11 +40,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   generateBtn.addEventListener('click', async () => {
-      const userInput = wordInput.value.trim();
-      if (!validateInput(userInput)) {
-          alert('Please enter up to 10 words.');
-          return;
-      }
+    let userInput = wordInput.value.trim();
+    if (!validateInput(userInput)) {
+        alert('Please enter up to 10 words.');
+        return;
+    }
+    
+    // Prepend "Generate a poem about:" to the user input
+    userInput = `Generate a poem about: ${userInput}`;
 
       try {
         const response = await fetch('https://cypherpoem.ew.r.appspot.com/generate-poem', {
