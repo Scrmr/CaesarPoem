@@ -16,7 +16,7 @@ const corsOptions = {
 
 let openaiApiKey; // Variable to store the OpenAI API key
 
-app.use(express.static(''));
+app.use(express.static(__dirname));
 app.use(express.json());
 app.use(cors());
 
