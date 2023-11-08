@@ -47,7 +47,7 @@
   }
   
   /* Style for the individual icons */
-  .navigation-icon img {
+  .navigation-icons img {
     max-width: 144px; /* Adjust the size of the icons */
     height: auto;
     margin: 30px;
