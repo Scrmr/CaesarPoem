@@ -43,7 +43,7 @@
     display: flex;
     justify-content: center; /* Align horizontally */
     align-items: center; /* Align vertically */
-    min-height: 200px; /* Give some height to the container */
+    
   }
   
   /* Style for the individual icons */
