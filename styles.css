@@ -20,3 +20,19 @@
     vertical-align: top;
     /* Rest of your styles for word-input */
 }
+
+
+.navigation-icon {
+    max-width: 48px; /* Adjust this value as needed */
+    height: auto; /* This will maintain the aspect ratio */
+    display: inline-block; /* Treat the link as an inline block */
+    margin: 10px; /* Add some space around the icons */
+    vertical-align: middle; /* Align icons with any adjacent text */
+  }
+  
+  /* If you want to add a hover effect to indicate clickability: */
+  .navigation-icon:hover {
+    opacity: 0.8; /* Make the icon slightly transparent on hover */
+    cursor: pointer; /* Change the cursor to indicate it's a link */
+  }
+  
