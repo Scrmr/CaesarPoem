@@ -48,7 +48,7 @@
   
   /* Style for the individual icons */
   .navigation-icon img {
-    max-width: 144px; /* Adjust the size of the icons */
+    max-width: 96px; /* Adjust the size of the icons */
     height: auto;
     margin: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); /* Floating shadow effect */
