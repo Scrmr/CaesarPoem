@@ -22,18 +22,65 @@
 }
 
 
-.navigation-icon {
-    max-width: 48px; /* Adjust this value as needed */
-    height: auto; /* This will maintain the aspect ratio */
-    display: inline-block; /* Treat the link as an inline block */
-    margin: 10px; /* Add some space around the icons */
-    vertical-align: middle; /* Align icons with any adjacent text */
+
+  
+  .header-fade {
+    color: white;
+    background: linear-gradient(to bottom, #000, #fff);
+    text-align: center;
+    padding: 50px 20px;
   }
   
-  /* If you want to add a hover effect to indicate clickability: */
-  .navigation-icon:hover {
-    opacity: 0.8; /* Make the icon slightly transparent on hover */
-    cursor: pointer; /* Change the cursor to indicate it's a link */
+  body, html {
+    margin: 0;
+    padding: 0;
+    background: white; /* Ensure the rest of the website has a white background */
+    font-family: 'Arial', sans-serif; /* Use a clean, simple font */
+  }
+
+  /* Center the icons using flexbox */
+.navigation-icons {
+    display: flex;
+    justify-content: center; /* Align horizontally */
+    align-items: center; /* Align vertically */
+    min-height: 200px; /* Give some height to the container */
   }
   
+  /* Style for the individual icons */
+  .navigation-icon img {
+    max-width: 144px; /* Adjust the size of the icons */
+    height: auto;
+    margin: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); /* Floating shadow effect */
+    transition: transform 0.3s ease; /* Transition for the hover effect */
+  }
+  
+  .navigation-icon:hover img {
+    transform: translateY(-5px); /* Makes the icon move up slightly when hovered */
+    cursor: pointer;
+  }
+  
+
+  /* Apply to all elements for smooth transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  
+  @media (max-width: 768px) {
+    .header-fade h1 {
+      font-size: 24px; /* Smaller text on smaller screens */
+      padding: 30px 10px; /* Less padding on smaller screens */
+    }
+  
+    .navigation-icon img {
+      max-width: 32px; /* Smaller icons on smaller screens */
+    }
+  
+    /* Adjust the navigation icons container to stack if necessary */
+    .navigation-icons {
+      flex-direction: column;
+      min-height: 0;
+    }
+  }
   
