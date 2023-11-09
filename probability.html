@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Probability Game</title>
+    <link rel="stylesheet" href="probability-styles.css">
+</head>
+<body>
+    
+    
+    <div id="accuracyContainer">
+        <div id="accuracyContainer">
+            <p><span>N-Gram Accuracy:</span> <span id="nGramAccuracy">0%</span></p>
+            <p><span>Markov Accuracy:</span> <span id="markovAccuracy">0%</span></p>
+        </div>
+        <p>This percentage reflects the accuracy of the models' predictions.</p>
+    </div>
+    
+    <div id="predictionsContainer">
+        <div id="nGramPrediction" class="prediction">
+            <h2>N-Gram Prediction</h2>
+            <p>Prediction: <span id="nGramGuess"></span> | User: <span id="nGramUser"></span></p>
+            <div id="nGramHistory"></div>
+        </div>
+
+        <div id="markovPrediction" class="prediction">
+            <h2>Markov Prediction</h2>
+            <p>Prediction: <span id="markovGuess"></span> | User: <span id="markovUser"></span></p>
+            <div id="markovHistory"></div>
+        </div>
+</div>
+
+    
+
+    <div id="userInputArea">
+        <button id="buttonA">A</button>
+        <button id="buttonD">D</button>
+    </div>
+
+    <script src="probability.js"></script>
+</body>
+</html>

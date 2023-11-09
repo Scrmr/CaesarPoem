@@ -1,0 +1,47 @@
+/* probability-styles.css */
+
+#nGramHistory, #markovHistory {
+    overflow-y: auto; /* Adds scroll if content is too long */
+    max-height: 300px; /* Limits the height of the history area */
+    margin-top: 10px; /* Adds some space above the history area */
+}
+/* Style for the predictions container to display N-Gram and Markov side by side */
+#predictionsContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 35%;
+}
+
+/* Style for individual prediction blocks */
+.prediction {
+    flex: 1; /* Allows the boxes to grow and take up equal space */
+    margin: 10px; /* Adds space between the containers */
+    padding: 10px; /* Adds space inside the containers */
+    border: 1px solid #ddd; /* Adds a light border around the prediction blocks */
+    border-radius: 4px; /* Slightly rounds the corners of the prediction blocks */
+    display: flex; /* Makes the prediction blocks flex containers */
+    flex-direction: column; /* Aligns children of the prediction blocks in a column */
+}
+
+/* Style for the accuracy container to be centered */
+#accuracyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#accuracyContainer p {
+    margin-right: 5px; /* Adds space between the percentage and the explanation */
+}
+
+/* Add any additional styling you want here */
+#userInputArea {
+    text-align: center; /* Center the buttons */
+}
+
+#userInputArea button {
+    margin: 0 5px; /* Add space between the buttons */
+}
