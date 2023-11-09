@@ -8,7 +8,26 @@
 </head>
 <body>
     
+    <div id="header">
+        <h1>Probability Game</h1>
+
+        Press A or D to begin.
+
+        Inspired by Aarsons Oracle, this "game" uses Markov Chains and N-Grams to predict the user's next input.
+        The goal is to be under 50% after a 100 button presses. Try to be as random as possible - do you have free will, or will a simple algorithm predict your next move?
+        
+        Both algorithms are essentially Markov Chains, but the N-Gram has lower memory and thus is more inaccurate in most cases.
     
+        <div id="interactionContainer">
+            <div id="buttonPressCounter" class="button-press-counter">
+                Button Presses: <span id="buttonPressCount">0</span>
+            </div>
+            <div id="userInputArea">
+                <button id="buttonA">A</button>
+                <button id="buttonD">D</button>
+            </div>
+        </div>
+
     <div id="accuracyContainer">
         <div id="accuracyContainer">
             <p><span>N-Gram Accuracy:</span> <span id="nGramAccuracy">0%</span></p>
@@ -31,12 +50,6 @@
         </div>
 </div>
 
-    
-
-    <div id="userInputArea">
-        <button id="buttonA">A</button>
-        <button id="buttonD">D</button>
-    </div>
 
     <script src="probability.js"></script>
 </body>

@@ -109,6 +109,12 @@ function handleUserInput(input) {
     console.log("User input:", input);
     userInputHistory.push(input);
     
+    if (input === 'a' || input === 'd') {
+        let buttonPressCountElement = document.getElementById('buttonPressCount');
+        let buttonPressCount = parseInt(buttonPressCountElement.textContent, 10);
+        buttonPressCountElement.textContent = (buttonPressCount + 1).toString();
+    }
+
     // Update n-gram frequencies for the Markov model before making predictions
     updateNGramFrequencies(userInputHistory, 5); // Assuming you are using 5-grams
 
