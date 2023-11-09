@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const userGuess = prompt('What is the decrypted word?').trim();
 
       if (userGuess.toLowerCase() === originalWord.toLowerCase()) {
-          encryptedSpan.textContent = originalWord;
+          encryptedSpan.textContent = originalWord + ' ';
           encryptedSpan.classList.remove('encrypted');
           alert('Correct!');
       } else {
