@@ -24,18 +24,18 @@
     flex-direction: column; /* Aligns children of the prediction blocks in a column */
 }
 
-/* Style for the accuracy container to be centered */
 #accuracyContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    text-align: center;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align the children horizontally */
+    margin-top: 20px; /* Adjust as necessary to provide space from the content above */
 }
 
-#accuracyContainer p {
-    margin-right: 5px; /* Adds space between the percentage and the explanation */
+#accuracyContainer > div {
+    display: flex;
+    justify-content: center; /* Center-align the percentages */
 }
+
 
 /* Add any additional styling you want here */
 #userInputArea {
