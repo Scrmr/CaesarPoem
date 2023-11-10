@@ -52,6 +52,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }    
 
+    document.getElementById('resetButton').addEventListener('click', function() {
+        // Reset the button press count to 0
+        document.getElementById('buttonPressCount').textContent = '0';
+        
+        // Clear the guess history array
+        guessHistory = [];
+        
+        // Reset correct predictions counters
+        correctPredictions = 0;
+        correctNGramPredictions = 0;
+        correctMarkovPredictions = 0;
+
+        // Reset the accuracy percentages in the display
+        document.getElementById('nGramAccuracy').textContent = 'N-Gram Accuracy: 0%';
+        document.getElementById('markovAccuracy').textContent = 'Markov Accuracy: 0%';
+
+        // Clear the guess history display
+        document.getElementById('nGramHistory').innerHTML = '';
+        document.getElementById('markovHistory').innerHTML = '';
+
+        // Reset the userInputHistory
+        userInputHistory = [];
+        
+        // If you have other elements that show the current prediction, reset them too
+        document.getElementById('nGramGuess').textContent = 'Prediction:';
+        document.getElementById('markovGuess').textContent = 'Prediction:';
+    });
 
 // Function to update the display of guess history    
 function updateGuessHistoryDisplay() {

@@ -65,3 +65,11 @@
 #userInputArea {
     /* If you have existing styles for this, they might need adjustments */
 }
+
+
+#resetButton {
+    padding: 5px 10px;
+    margin-left: 10px; /* Spacing between the button counter and reset button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    /* Add any additional styles to match your page's design */
+}
