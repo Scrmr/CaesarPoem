@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Probability Game 2</title>
+    <link rel="stylesheet" href="probability-styles.css">
+</head>
+<body>
+    
+    <div id="header">
+        <h1>Probability Game 2</h1>
+
+        Press A or D to begin.
+
+        <p>Inspired by Aarsons Oracle, this "game" uses a Q-learning algorithm to predict what you'll press next.</p>
+        <p>The goal is to have the algorithm's prediction accuracy be around 50% after at least 100 button presses (the more you press, the more accurate the algorithm becomes). 
+        Try to be as random as possible - do you have free will, or will a simple algorithm predict your next move?</p>
+
+        <div id="interactionContainer">
+            <div id="buttonPressCounter" class="button-press-counter">
+                Button Presses: <span id="buttonPressCount">0</span>
+                <button id="resetButton">Reset Counter</button>
+            </div>
+
+            <div id="predictionContainer">
+                <p>Q-Learning Prediction: <span id="qLearningPrediction">-</span></p>
+                <p>Q-Learning Accuracy: <span id="qLearningAccuracy">0%</span></p>
+            </div>
+
+            <div id="userInputArea">
+                <button id="buttonA">A</button>
+                <button id="buttonD">D</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="probability2.js"></script>
+</body>
+</html>
