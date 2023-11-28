@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function sendPredictionRequest(lastInput) {
-        fetch('/predict', {
+        fetch('https://probability2-8ca2d64f5bb4.herokuapp.com/predict', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ state: lastInput })
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let reward = actualNextInput === predictedInput ? 1 : 0;
         if (reward === 1) correctPredictions++;
 
-        fetch('/update', {
+        fetch('https://probability2-8ca2d64f5bb4.herokuapp.com/update', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
