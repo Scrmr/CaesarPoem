@@ -14,6 +14,11 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
+@app.get("/test")
+def test_endpoint():
+    return {"message": "This is a test endpoint"}
+
+
 
 # Global counter for updates and threshold for saving
 update_counter = 0
