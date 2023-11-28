@@ -6,9 +6,16 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from google.oauth2 import service_account
 from google.cloud import secretmanager
+from fastapi import FastAPI, Response
 
 
 app = FastAPI()
+
+@app.get("/test")
+def test_endpoint():
+    response = Response(content="Test response")
+    response.headers["Access-Control-Allow-Origin"] = "https://ignasz.uk"  # or "*" for testing
+    return response
 
 app.add_middleware(
     CORSMiddleware,
