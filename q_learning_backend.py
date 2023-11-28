@@ -1,8 +1,12 @@
 import mysql.connector
 import os
+import json
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from google.oauth2 import service_account
+from google.cloud import secretmanager
+
 
 app = FastAPI()
 
@@ -14,9 +18,8 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-@app.get("/test")
-def test_endpoint():
-    return {"message": "This is a test endpoint"}
+service_account_info = json.loads(os.getenv("GOOGLE_APPLICATION_CREDENTIALS"))
+credentials = service_account.Credentials.from_service_account_info(service_account_info)
 
 
 
