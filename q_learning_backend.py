@@ -11,12 +11,6 @@ from fastapi import FastAPI, Response
 
 app = FastAPI()
 
-@app.get("/test")
-def test_endpoint():
-    response = Response(content="Test response")
-    response.headers["Access-Control-Allow-Origin"] = "https://ignasz.uk"  # or "*" for testing
-    return response
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Specify your frontend URL
