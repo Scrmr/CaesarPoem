@@ -62,9 +62,9 @@
     /* No need for position:absolute since it's within a flex container now */
 }
 
-#userInputArea {
-    /* If you have existing styles for this, they might need adjustments */
-}
+/* Add any additional styling you want here */
+/* Add your selector or at-rule here */
+
 
 
 #resetButton {
