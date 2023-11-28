@@ -19,7 +19,7 @@ def test_endpoint():
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://ignasz.uk"],  # Specify your frontend URL
+    allow_origins=["*"],  # Specify your frontend URL
     allow_credentials=True,
     allow_methods=["*"],  # Allows all methods
     allow_headers=["*"],  # Allows all headers
