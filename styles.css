@@ -1,88 +1,81 @@
-.encrypted {
-    font-weight: bold;
-    cursor: pointer;
-    background-color: yellow;
+/* General Body Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
-
-.input-prefix {
-    display: inline-block;
-    margin-right: -4px;
-    vertical-align: top;
-    padding: 8px;
-    background: #f0f0f0;
-    color: #555;
-    border: 1px solid #ccc;
-    border-right: none;
-    border-radius: 4px 0 0 4px;
-}
-#word-input {
-    vertical-align: top;
-    /* Rest of your styles for word-input */
+/* Container Styling */
+.container {
+  max-width: 960px;
+  margin: auto;
 }
 
+/* Header Section Styling */
+.row.align-items-center {
+  margin-top: 50px; /* Space from the top */
+}
 
+/* Image Styling */
+img.rounded-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
 
-  
-  .header-fade {
-    color: white;
-    background: linear-gradient(to bottom, #000, #fff);
-    text-align: center;
-    padding: 50px 20px;
-  }
-  
-  body, html {
-    margin: 0;
-    padding: 0;
-    background: white; /* Ensure the rest of the website has a white background */
-    font-family: 'Arial', sans-serif; /* Use a clean, simple font */
+/* Lead Text Styling */
+.lead {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+/* LinkedIn Icon Styling */
+.bi-linkedin {
+  color: #0a66c2; /* LinkedIn Blue */
+  font-size: 1.5rem; /* Icon Size */
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Footer Links */
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation Icons */
+.img-fluid {
+  max-width: 15%;
+  height: auto;
+  margin-bottom: 20px; /* Space below each icon */
+}
+
+/* Responsive Design for smaller devices */
+@media (max-width: 768px) {
+  .row.align-items-center {
+      text-align: center;
   }
 
-  /* Center the icons using flexbox */
-.navigation-icons {
-    display: flex;
-    justify-content: center; /* Align horizontally */
-    align-items: center; /* Align vertically */
-    
-  }
-  
-  /* Style for the individual icons */
-  .navigation-icons img {
-    max-width: 144px; /* Adjust the size of the icons */
-    height: auto;
-    margin: 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); /* Floating shadow effect */
-    transition: transform 0.3s ease; /* Transition for the hover effect */
-  }
-  
-  .navigation-icon:hover img {
-    transform: translateY(-5px); /* Makes the icon move up slightly when hovered */
-    cursor: pointer;
-  }
-  
-
-  /* Apply to all elements for smooth transitions */
-* {
-    transition: background-color 0.3s ease, color 0.3s ease;
+  .row.align-items-center .col-md-4,
+  .row.align-items-center .col-md-8 {
+      margin-bottom: 20px;
   }
 
-  
-  @media (max-width: 768px) {
-    .header-fade h1 {
-      font-size: 24px; /* Smaller text on smaller screens */
-      padding: 30px 10px; /* Less padding on smaller screens */
-    }
-  
-    .navigation-icon img {
-      max-width: 32px; /* Smaller icons on smaller screens */
-    }
-  
-    /* Adjust the navigation icons container to stack if necessary */
-    .navigation-icons {
-      flex-direction: column;
-      min-height: 0;
-    }
+  .bi-linkedin {
+      display: block;
+      margin: auto;
+      margin-bottom: 15px;
   }
-  
-
-  
+}

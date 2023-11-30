@@ -1,43 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha384-1CmRX2rGYIUq3HjJ2crW3qkFiOrWl9ZC1ndZgRFclj5g6UqigqiiC58dNIJ7Kt" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css" integrity="sha384-8blFQW0d5/2c7x2sofJPysr3E7lXiTwVbHQD2BQOoo+MkCmkpZfubZrErJpGhJy" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IgnasZ</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="header-fade">
-        <h1>Welcome</h1>
-    </div>
-
-    <div class="game-container">
-        <header>This website serves as a record of what I learn and create. 
-
-            Began in November 2023. 
-            
-            
-            Enjoy!
-
-        </header>    
-            <!-- Navigation icons for new pages -->
-            <div class="navigation-icons">
-                <a href="cypherpoem.html">
-                  <img src="images/cypherpoem.png"  class="navigation-icon">
+    <div class="container mt-5">
+        <!-- Header Section with Image and Text Side by Side -->
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-md-12 text-center">
+                <img src="images/me.jpg" alt="Your Name" class="rounded-circle" style="width: 150px; height: 150px;">
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <p class="lead">Hello, I use this website to learn about various topics in areas such as philosophy, technology, and art.</p>
+                <!-- LinkedIn Icon -->
+                <a href="https://www.linkedin.com/in/ignas-zemleckas" target="_blank" class="text-dark mx-2">
+                    <i class="bi bi-linkedin"></i> LinkedIn
                 </a>
+            </div>
+        </div>
 
+        <!-- Navigation Icons -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-auto">
+                <a href="cypherpoem.html">
+                <img src="images/cypherpoem.png" alt="Icon 1" class="img-fluid">
+            </a>
+            </div>
+            <div class="col-auto">
                 <a href="probability.html">
-                    <img src="images/probability.png"  class="navigation-icon">
-                  </a>
-
+                <img src="images/probability.png" alt="Icon 2" class="img-fluid">
+            </a>
+            </div>
+            <div class="col-auto">
                 <a href="probability2.html">
-                    <img src="images/probability2.png"  class="navigation-icon">
-                    </a>
-                <!-- Repeat for other icons -->
-              </div>
-        </main>
+                <img src="images/probability2.png" alt="Icon 3" class="img-fluid">
+            </a>
+            </div>
+        </div>
     </div>
-    
+
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+        <div class="container text-center">
+            <a href="https://www.linkedin.com/in/ignas-zemleckas" target="_blank" class="text-white mx-2">
+                <i class="bi bi-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js" integrity="sha384-akTpIy52a5bZ8/lHwNf5QznGhqM1Rt/aJ2c3KJL5a6O9GAO6c7/cNOe7T7Mcssj" crossorigin="anonymous"></script>
 </body>
 </html>
