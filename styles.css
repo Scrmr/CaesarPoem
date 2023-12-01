@@ -3,6 +3,8 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: #f8f9fa;
   color: #333;
+  background: url('images/road_background.png') no-repeat center center;
+  background-size: cover; /* This will ensure that the background covers the entire viewport */
 }
 
 /* Container Styling */
@@ -37,6 +39,22 @@ img.rounded-circle {
   margin-right: 5px;
 }
 
+.icon-container {
+  position: relative;
+  width: 100%; /* Full width of the container */
+  height: 500px; /* Adjust the height to fit the background image */
+  /* Make sure the container is not collapsed */
+}
+
+.icon {
+    display: block; /* Changed from inline-block to block */
+    position: absolute;
+    width: 50px; 
+    height: 50px; /* Replace [icon height] with the actual height of your icons */
+    overflow: hidden; /* Ensures no extra space is taken up */
+  
+  }
+
 /* Footer Styling */
 .footer {
   background-color: #343a40;
@@ -55,11 +73,25 @@ img.rounded-circle {
   text-decoration: underline;
 }
 
+
+
 /* Navigation Icons */
 .img-fluid {
-  max-width: 15%;
+  display: block;
+  width: 100%; /* Makes the image fill the anchor tag */
   height: auto;
   margin-bottom: 20px; /* Space below each icon */
+  transition: transform 0.2s, opacity 0.2s; /* Smooth transition for scaling and opacity */
+  opacity: 0.6; /* Partial transparency */
+  box-shadow: none; /* No shadow by default */
+  filter: grayscale(100%); /* Fully desaturate the color */
+}
+
+.img-fluid:hover {
+    transform: scale(1.05); /* Scale up icons slightly on hover */
+    opacity: 1; /* Full opacity on hover */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Shadow appears on hover */
+    filter: grayscale(0%); /* Full color on hover */
 }
 
 /* Responsive Design for smaller devices */
@@ -78,4 +110,13 @@ img.rounded-circle {
       margin: auto;
       margin-bottom: 15px;
   }
+
+  .icon {
+    /* Adjust top and left values for smaller screens */
+    top: 40%; /* Example adjustment */
+    left: 30%; /* Example adjustment */
+    transform: scale(0.8)
+}
+
+
 }
