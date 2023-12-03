@@ -99,26 +99,18 @@ img.rounded-circle {
     filter: grayscale(0%); /* Full color on hover */
 }
 
-.accordion-header {
-  background-color: #eee;
-  border: none;
-  padding: 10px;
-  text-align: left;
-  cursor: pointer;
-  width: 100%;
-  border-bottom: 1px solid #ddd;
+.pdf-links {
+  margin-top: 20px;
+  border-top: 2px solid #ccc;
+  padding-top: 20px;
 }
 
-.accordion-content {
-  display: none; /* Hide content initially */
-  overflow: hidden;
+.pdf-links a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #007bff;
 }
-
-.accordion-body {
-  padding: 10px;
-}
-
-
 
 
 
