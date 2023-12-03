@@ -39,6 +39,12 @@ img.rounded-circle {
   margin-right: 5px;
 }
 
+.img-philosophy-large {
+  width: 120px !important; /* or any other size */
+  height: auto !important; /* maintain aspect ratio */
+}
+
+
 .icon-container {
   position: relative;
   width: 100%; /* Full width of the container */
@@ -47,13 +53,12 @@ img.rounded-circle {
 }
 
 .icon {
-    display: block; /* Changed from inline-block to block */
-    position: absolute;
-    width: 50px; 
-    height: 50px; /* Replace [icon height] with the actual height of your icons */
-    overflow: hidden; /* Ensures no extra space is taken up */
-  
-  }
+  display: block;
+  position: absolute;
+  overflow: hidden;
+}
+
+
 
 /* Footer Styling */
 .footer {
@@ -78,7 +83,7 @@ img.rounded-circle {
 /* Navigation Icons */
 .img-fluid {
   display: block;
-  width: 100%; /* Makes the image fill the anchor tag */
+  width: 70px; /* Makes the image fill the anchor tag */
   height: auto;
   margin-bottom: 20px; /* Space below each icon */
   transition: transform 0.2s, opacity 0.2s; /* Smooth transition for scaling and opacity */
@@ -93,6 +98,29 @@ img.rounded-circle {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Shadow appears on hover */
     filter: grayscale(0%); /* Full color on hover */
 }
+
+.accordion-header {
+  background-color: #eee;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-content {
+  display: none; /* Hide content initially */
+  overflow: hidden;
+}
+
+.accordion-body {
+  padding: 10px;
+}
+
+
+
+
 
 /* Responsive Design for smaller devices */
 @media (max-width: 768px) {
