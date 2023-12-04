@@ -1,5 +1,6 @@
 /* General Body Styles */
 body {
+  min-height: 100vh;
   font-family: 'Roboto', sans-serif;
   background-color: #f8f9fa;
   color: #333;
