@@ -112,6 +112,21 @@ img.rounded-circle {
   color: #007bff;
 }
 
+.link-container {
+
+  position: absolute; /* or `fixed` if you want it to stay in place while scrolling */
+  left: 125px; /* Adjust this value as needed */
+  top: 400px; /* Adjust this to position vertically */
+  border: none;
+  width: 120px
+  /* Add more styling as needed */
+}
+
+.link-container a {
+  text-decoration: none;
+  /* Style for your link (color, font, etc.) */
+}
+
 
 
 /* Responsive Design for smaller devices */
