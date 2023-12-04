@@ -130,6 +130,11 @@ img.rounded-circle {
   /* Style for your link (color, font, etc.) */
 }
 
+.link-container a::before {
+  content: '→ '; /* Your chosen symbol followed by a space */
+  /* Additional styling for the symbol (color, size, etc.) */
+}
+
 
 
 /* Responsive Design for smaller devices */
