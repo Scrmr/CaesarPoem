@@ -113,7 +113,7 @@ img.rounded-circle {
 }
 
 .link-container {
-
+  display: inline-block;
   position: absolute; /* or `fixed` if you want it to stay in place while scrolling */
   left: 125px; /* Adjust this value as needed */
   top: 400px; /* Adjust this to position vertically */
@@ -123,7 +123,10 @@ img.rounded-circle {
 }
 
 .link-container a {
+  display: block;
   text-decoration: none;
+  margin-right: 30px; /* Adjust the space between links */
+    /* Additional styling for the links */
   /* Style for your link (color, font, etc.) */
 }
 
