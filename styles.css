@@ -1,6 +1,6 @@
 /* General Body Styles */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #f8f9fa;
   color: #333;
   background: url('images/road_background.png') no-repeat center center;
@@ -118,6 +118,9 @@ img.rounded-circle {
 @media (max-width: 768px) {
   .row.align-items-center {
       text-align: center;
+      h1 {
+        font-size: 24px; /* Smaller font size on smaller screens */
+    }
   }
 
   .row.align-items-center .col-md-4,
@@ -137,6 +140,8 @@ img.rounded-circle {
     left: 30%; /* Example adjustment */
     transform: scale(0.8)
 }
+
+
 
 
 }
