@@ -113,66 +113,39 @@ img.rounded-circle {
   color: #007bff;
 }
 
-.link-container {
-  display: inline-block;
-  position: absolute; /* or `fixed` if you want it to stay in place while scrolling */
-  left: 125px; /* Adjust this value as needed */
-  top: 400px; /* Adjust this to position vertically */
-  border: none;
-  width: 120px
-  /* Add more styling as needed */
-}
-
 .link-container a {
   display: block;
-  text-decoration: none;
-  margin-right: 30px; /* Adjust the space between links */
-    /* Additional styling for the links */
-  /* Style for your link (color, font, etc.) */
-}
+  text-align: left;
+  padding: 1rem;
+  width: auto; /* Adjust width as needed */
 
-.link-container a::before {
-  content: '→ '; /* Your chosen symbol followed by a space */
-  /* Additional styling for the symbol (color, size, etc.) */
 }
 
 
-
-/* Responsive Design for smaller devices */
-
-@media screen and (max-width: 600px) { /* Adjust for small screens */
-  .link-container a {
-      padding-left: 30px; /* Increase padding on smaller screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .row.align-items-center {
-      text-align: center;
-      h1 {
-        font-size: 24px; /* Smaller font size on smaller screens */
-    }
-  }
-
-  .row.align-items-center .col-md-4,
-  .row.align-items-center .col-md-8 {
-      margin-bottom: 20px;
-  }
-
-  .bi-linkedin {
+/* Desktop specific styles */
+@media (min-width: 992px) {
+  .link-container {
       display: block;
-      margin: auto;
-      margin-bottom: 15px;
+      position: absolute;
+      top: 50%; /* Adjust this value to vertically center it to .icon-container */
+      left: calc(5% - 50px); /* 25% is the left position of the .icon-container, 150px is an arbitrary width of .link-container */
+      transform: translateY(-0%); /* Vertically center the div */
+      width: auto; /* Adjust width as needed */
+      text-align: left;
+      padding: 1rem;
+      /* Add other styles such as background, padding, border, etc. as needed */
   }
-
-  .icon {
-    /* Adjust top and left values for smaller screens */
-    top: 40%; /* Example adjustment */
-    left: 30%; /* Example adjustment */
-    transform: scale(0.8)
 }
 
-
-
-
+/* Mobile specific styles */
+@media (max-width: 991px) {
+  .link-container {
+      display: block;
+      position: relative; /* Adjust if needed */
+      margin-top: 20px; /* Add space above on mobile */
+      margin-bottom: 20px; /* Add space below on mobile */
+      text-align: left;
+      padding: 1rem;
+      /* Adjust width, margin, padding, etc. for mobile layout as needed */
+  }
 }
