@@ -138,6 +138,13 @@ img.rounded-circle {
 
 
 /* Responsive Design for smaller devices */
+
+@media screen and (max-width: 600px) { /* Adjust for small screens */
+  .link-container a {
+      padding-left: 30px; /* Increase padding on smaller screens */
+  }
+}
+
 @media (max-width: 768px) {
   .row.align-items-center {
       text-align: center;
